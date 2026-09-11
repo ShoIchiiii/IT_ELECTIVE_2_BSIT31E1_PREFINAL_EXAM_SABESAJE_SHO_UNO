@@ -92,4 +92,12 @@ namespace IT_ELECTIVE_2_SECTION_PREFINAL_EXAM_Lastname_FirstName.Services
                     CorrectAnswer = "B. To combine or shape the data specifically needed by the view",
                     Explanation = "ViewModels custom-tailor data for view presentation without exposing raw domain models."
                 },
+                new ExamQuestion {
+                    Id = 12,
+                    QuestionText = "What is the main benefit of Include(s => s.Section)?",
+                    Options = new List<string>{ "A. It loads the related Section navigation property", "B. It creates a Section object manually", "C. It removes the foreign key", "D. It prevents the query from accessing the database" },
+                    CorrectAnswer = "A. It loads the related Section navigation property",
+                    Explanation = "It ensures that the Section details associated with each student are fetched alongside."
+                },
+
 
