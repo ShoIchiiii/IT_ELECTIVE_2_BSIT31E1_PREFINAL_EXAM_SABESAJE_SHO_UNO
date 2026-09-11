@@ -57,3 +57,10 @@ namespace IT_ELECTIVE_2_SECTION_PREFINAL_EXAM_Lastname_FirstName.Services
                     CorrectAnswer = "B. appsettings.json",
                     Explanation = "Application configurations like connection strings are best kept in appsettings.json."
                 },
+                new ExamQuestion {
+                    Id = 7,
+                    QuestionText = "A Student belongs to exactly one Section, while a Section can contain many students. What type of relationship is this?",
+                    Options = new List<string>{ "A. One-to-One", "B. One-to-Many", "C. Many-to-Many", "D. Many-to-One only" },
+                    CorrectAnswer = "B. One-to-Many",
+                    Explanation = "One Section has multiple Students (1:N)."
+                },
