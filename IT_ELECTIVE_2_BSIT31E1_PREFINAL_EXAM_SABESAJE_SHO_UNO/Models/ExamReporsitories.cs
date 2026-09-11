@@ -71,3 +71,10 @@ namespace IT_ELECTIVE_2_SECTION_PREFINAL_EXAM_Lastname_FirstName.Services
                     CorrectAnswer = "B. Foreign key referencing Section",
                     Explanation = "SectionId holds the foreign key value pointing to the primary key of the Section table."
                 },
+                new ExamQuestion {
+                    Id = 9,
+                    QuestionText = "What is the purpose of a navigation property such as public Section Section { get; set; }?",
+                    Options = new List<string>{ "A. It stores the database password", "B. It represents a relationship to another entity", "C. It creates a new database", "D. It validates the student's name" },
+                    CorrectAnswer = "B. It represents a relationship to another entity",
+                    Explanation = "Navigation properties allow traversing relationships between related entities in EF Core."
+                },
