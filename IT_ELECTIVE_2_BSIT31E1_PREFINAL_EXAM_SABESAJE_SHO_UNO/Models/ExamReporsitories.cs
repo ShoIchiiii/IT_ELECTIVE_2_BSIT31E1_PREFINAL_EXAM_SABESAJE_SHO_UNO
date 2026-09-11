@@ -78,3 +78,10 @@ namespace IT_ELECTIVE_2_SECTION_PREFINAL_EXAM_Lastname_FirstName.Services
                     CorrectAnswer = "B. It represents a relationship to another entity",
                     Explanation = "Navigation properties allow traversing relationships between related entities in EF Core."
                 },
+                new ExamQuestion {
+                    Id = 10,
+                    QuestionText = "What does .Include() generally allow EF Core to do?",
+                    Options = new List<string>{ "A. Delete the Section table", "B. Load related Section data together with Students", "C. Create a new Student", "D. Validate Student input" },
+                    CorrectAnswer = "B. Load related Section data together with Students",
+                    Explanation = ".Include() specifies related data to be included in query results (eager loading)."
+                },
