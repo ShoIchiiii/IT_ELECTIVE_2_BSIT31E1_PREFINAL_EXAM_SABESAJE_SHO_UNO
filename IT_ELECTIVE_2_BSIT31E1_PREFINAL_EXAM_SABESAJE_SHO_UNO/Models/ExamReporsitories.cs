@@ -148,5 +148,16 @@ namespace IT_ELECTIVE_2_SECTION_PREFINAL_EXAM_Lastname_FirstName.Services
                     CorrectAnswer = "B. Display a Not Found (404) response/page",
                     Explanation = "HTTP 404 indicates that the requested resource could not be found."
                 },
+                new ExamQuestion {
+                    Id = 20,
+                    QuestionText = "A student already belongs to Section A... The application attempts to assign the same student to Section A again. What is the primary concern?",
+                    Options = new List<string>{ "A. Data integrity", "B. HTML formatting", "C. CSS inheritance", "D. Razor syntax" },
+                    CorrectAnswer = "A. Data integrity",
+                    Explanation = "Preventing duplicate assignments preserves data integrity."
+                }
+            };
+        }
+    }
+}
 
 
