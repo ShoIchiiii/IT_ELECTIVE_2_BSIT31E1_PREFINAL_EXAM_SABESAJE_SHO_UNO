@@ -22,3 +22,10 @@ namespace IT_ELECTIVE_2_SECTION_PREFINAL_EXAM_Lastname_FirstName.Services
                     CorrectAnswer = "B. Database-First",
                     Explanation = "Database-First approach generates code models and DbContext directly from an existing database schema."
                 },
+                new ExamQuestion {
+                    Id = 3,
+                    QuestionText = "What is the primary purpose of Entity Framework Core?",
+                    Options = new List<string>{ "A. To create HTML pages automatically", "B. To replace the MVC Controller", "C. To map objects in code to relational database data", "D. To replace the C# compiler" },
+                    CorrectAnswer = "C. To map objects in code to relational database data",
+                    Explanation = "EF Core is an Object-Relational Mapper (ORM) that bridges the gap between C# objects and database tables."
+                },
