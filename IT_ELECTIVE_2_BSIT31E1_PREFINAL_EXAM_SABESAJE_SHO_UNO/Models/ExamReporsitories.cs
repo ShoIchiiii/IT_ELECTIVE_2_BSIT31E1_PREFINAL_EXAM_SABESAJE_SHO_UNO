@@ -127,5 +127,12 @@ namespace IT_ELECTIVE_2_SECTION_PREFINAL_EXAM_Lastname_FirstName.Services
                     CorrectAnswer = "A. It protects data integrity even if application-level validation is bypassed",
                     Explanation = "Database constraints are the final line of defense to enforce integrity."
                 },
+                new ExamQuestion {
+                    Id = 17,
+                    QuestionText = "What is the purpose of a try...catch block in a controller?",
+                    Options = new List<string>{ "A. To create navigation properties", "B. To catch and handle exceptions that may occur during execution", "C. To generate database tables", "D. To perform client-side validation" },
+                    CorrectAnswer = "B. To catch and handle exceptions that may occur during execution",
+                    Explanation = "Try-catch blocks catch runtime exceptions gracefully to prevent application crashes."
+                },
 
 
