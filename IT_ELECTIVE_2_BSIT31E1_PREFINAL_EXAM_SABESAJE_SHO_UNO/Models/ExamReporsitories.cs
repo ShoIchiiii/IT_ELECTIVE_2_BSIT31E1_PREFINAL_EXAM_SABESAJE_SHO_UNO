@@ -36,3 +36,10 @@ namespace IT_ELECTIVE_2_SECTION_PREFINAL_EXAM_Lastname_FirstName.Services
                     CorrectAnswer = "C. To map objects in code to relational database data",
                     Explanation = "EF Core is an Object-Relational Mapper (ORM) that bridges the gap between C# objects and database tables."
                 },
+                new ExamQuestion {
+                    Id = 4,
+                    QuestionText = "Which EF Core component is primarily responsible for communicating with the database?",
+                    Options = new List<string>{ "A. DbContext", "B. DbSetView", "C. ControllerContext", "D. RazorContext" },
+                    CorrectAnswer = "A. DbContext",
+                    Explanation = "DbContext manages database connections, change tracking, and queries."
+                },
