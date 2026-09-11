@@ -50,3 +50,10 @@ namespace IT_ELECTIVE_2_SECTION_PREFINAL_EXAM_Lastname_FirstName.Services
                     CorrectAnswer = "C. Generates EF Core models and a DbContext from an existing database",
                     Explanation = "Scaffolding reads an existing database schema and generates the corresponding classes and context."
                 },
+                new ExamQuestion {
+                    Id = 6,
+                    QuestionText = "Where is a database connection string commonly stored in an ASP.NET Core MVC application?",
+                    Options = new List<string>{ "A. Program.cs only", "B. appsettings.json", "C. Index.cshtml", "D. Student.cs" },
+                    CorrectAnswer = "B. appsettings.json",
+                    Explanation = "Application configurations like connection strings are best kept in appsettings.json."
+                },
