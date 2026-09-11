@@ -99,5 +99,12 @@ namespace IT_ELECTIVE_2_SECTION_PREFINAL_EXAM_Lastname_FirstName.Services
                     CorrectAnswer = "A. It loads the related Section navigation property",
                     Explanation = "It ensures that the Section details associated with each student are fetched alongside."
                 },
+                new ExamQuestion {
+                    Id = 13,
+                    QuestionText = "Which type of validation occurs in the browser before a request is sent to the server?",
+                    Options = new List<string>{ "A. Database-level validation", "B. Client-side validation", "C. Server-side validation", "D. EF Core migration validation" },
+                    CorrectAnswer = "B. Client-side validation",
+                    Explanation = "Client-side validation runs via JavaScript/HTML attributes directly in the browser."
+                },
 
 
