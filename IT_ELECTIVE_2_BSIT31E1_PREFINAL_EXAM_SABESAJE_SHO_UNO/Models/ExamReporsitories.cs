@@ -43,3 +43,10 @@ namespace IT_ELECTIVE_2_SECTION_PREFINAL_EXAM_Lastname_FirstName.Services
                     CorrectAnswer = "A. DbContext",
                     Explanation = "DbContext manages database connections, change tracking, and queries."
                 },
+                new ExamQuestion {
+                    Id = 5,
+                    QuestionText = "What does the command 'dotnet ef dbcontext scaffold...' primarily do?",
+                    Options = new List<string>{ "A. Deletes the database", "B. Creates a new MVC project", "C. Generates EF Core models and a DbContext from an existing database", "D. Starts the MVC application" },
+                    CorrectAnswer = "C. Generates EF Core models and a DbContext from an existing database",
+                    Explanation = "Scaffolding reads an existing database schema and generates the corresponding classes and context."
+                },
