@@ -1,40 +1,150 @@
 ﻿@model List<IT_ELECTIVE_2_SECTION_PREFINAL_EXAM_Lastname_FirstName.Models.ExamQuestion>
 
 @{
-    ViewData["Title"] = "Prefinal Exam Answers";
+    ViewData["Title"] = "Prefinal Exam Dashboard";
 }
 
-<div class="container my-4">
-    <div class="p-4 mb-4 bg-primary text-white rounded-3 shadow">
-        <h1 class="display-5 fw-bold">IT ELECTIVE 2 - PREFINAL EXAMINATION</h1>
-        <p class="fs-4 mb-0">Student: Sabesaje, Sho Uno | Section: BSIT31E1 </p>
+<!-- Modern Hero / Header Card -->
+<div class="card border-0 shadow-lg rounded-4 mb-4 text-white overflow-hidden hero-card">
+    <div class="card-body p-4 p-md-5 position-relative z-1">
+        <div class="row align-items-center">
+            <div class="col-md-8">
+                <span class="badge bg-warning text-dark mb-3 px-3 py-2 rounded-pill fw-bold shadow-sm">
+                    <i class="bi bi-mortarboard-fill me-1"></i> 1st Semester, A.Y. 2026-2027
+                </span>
+                <h1 class="display-5 fw-extrabold mb-2 text-gradient">IT ELECTIVE 2 – PREFINAL EXAM</h1>
+                <p class="fs-5 opacity-90 mb-0 d-flex align-items-center gap-2">
+                    <i class="bi bi-person-circle fs-4 text-warning"></i>
+                    <span><strong>Student Name:</strong> Sho Uno Sabesaje &nbsp;|&nbsp; <strong>Section:</strong> BSIT-31E1</span>
+                </p>
+            </div>
+            <div class="col-md-4 text-md-end mt-4 mt-md-0">
+                <div class="glass-card p-3 rounded-4 shadow-sm d-inline-block text-center border-glass">
+                    <span class="d-block text-uppercase small text-white-50 fw-bold tracking-wider">Overall Score</span>
+                    <span class="display-6 fw-bold text-warning mb-0">20 / 20</span>
+                    <small class="d-block text-success-light mt-1"><i class="bi bi-check-all me-1"></i>100% Completed</small>
+                </div>
+            </div>
+        </div>
     </div>
+</div>
 
-    <div class="row">
-        @foreach (var q in Model)
-        {
-            <div class="col-md-6 mb-4">
-                <div class="card h-100 shadow-sm border-0 rounded-3">
-                    <div class="card-header bg-dark text-white fw-bold">
-                        Question #@q.Id
+<!-- Interactive Search & Filter Controls -->
+<div class="card border-0 shadow-sm rounded-4 mb-4 p-3 bg-white">
+    <div class="row g-3 align-items-center justify-content-between">
+        <div class="col-md-5">
+            <div class="input-group">
+                <span class="input-group-text bg-light border-0 text-muted"><i class="bi bi-search"></i></span>
+                <input type="text" id="searchInput" class="form-control bg-light border-0 shadow-none" placeholder="Search questions or answers..." onkeyup="searchQuestions()">
+            </div>
+        </div>
+        <div class="col-md-7 text-md-end">
+            <div class="btn-group p-1 bg-light rounded-pill shadow-inner" role="group">
+                <button type="button" class="btn btn-pill active fw-bold px-3 py-2" id="btn-all" onclick="filterItems('all')">
+                    <i class="bi bi-grid-fill me-1"></i> All (20)
+                </button>
+                <button type="button" class="btn btn-pill fw-bold px-3 py-2" id="btn-odd" onclick="filterItems('odd')">
+                    <i class="bi bi-1-circle me-1"></i> Odd Items
+                </button>
+                <button type="button" class="btn btn-pill fw-bold px-3 py-2" id="btn-even" onclick="filterItems('even')">
+                    <i class="bi bi-2-circle me-1"></i> Even Items
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Questions Grid -->
+<div class="row g-4" id="questionsContainer">
+    @foreach (var q in Model)
+    {
+        string collapseId = "explanation_item_" + q.Id;
+
+        <div class="col-md-6 question-card" data-item-id="@q.Id" data-type="@(q.Id % 2 == 0 ? "even" : "odd")">
+            <div class="card h-100 border-0 shadow-sm rounded-4 hover-up transition-all bg-white overflow-hidden">
+                <div class="card-header bg-white border-0 pt-4 px-4 pb-0 d-flex justify-content-between align-items-center">
+                    <span class="badge bg-dark text-warning rounded-pill px-3 py-2 fw-bold">Item #@q.Id</span>
+                    <span class="badge bg-success-subtle text-success border border-success-subtle rounded-pill px-3 py-1">
+                        <i class="bi bi-shield-check me-1"></i> Verified Answer
+                    </span>
+                </div>
+                <div class="card-body px-4 pt-3 pb-4 d-flex flex-column justify-content-between">
+                    <div>
+                        <!-- Question Text -->
+                        <h5 class="card-title fw-bold text-dark mb-4 lh-base search-target">@q.QuestionText</h5>
+
+                        <!-- Correct Answer Box -->
+                        <div class="p-3 bg-gradient-success text-white rounded-3 fw-bold mb-3 shadow-sm d-flex align-items-center justify-content-between search-target">
+                            <span class="d-flex align-items-center">
+                                <i class="bi bi-check-circle-fill me-2 fs-5"></i> @q.CorrectAnswer
+                            </span>
+                            <i class="bi bi-patch-check-fill fs-5 opacity-75"></i>
+                        </div>
                     </div>
-                    <div class="card-body">
-                        <p class="card-text fw-semibold">@q.QuestionText</p>
-                        <ul class="list-group list-group-flush mb-3">
-                            @foreach (var opt in q.Options)
-                            {
-                                bool isCorrect = opt.StartsWith(q.CorrectAnswer.Substring(0, 2));
-                                <li class="list-group-item @(isCorrect ? "list-group-item-success fw-bold" : "")">
-                                    @opt @(isCorrect ? "✔️" : "")
-                                </li>
-                            }
-                        </ul>
-                        <div class="alert alert-info mb-0">
-                            <strong>Explanation:</strong> @q.Explanation
+
+                    <div>
+                        <!-- Toggle Button -->
+                        <button class="btn btn-light text-primary border-0 fw-bold w-100 py-2 rounded-3 shadow-none hover-btn d-flex align-items-center justify-content-center gap-2"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#@collapseId"
+                                aria-expanded="false"
+                                aria-controls="@collapseId">
+                            <i class="bi bi-lightbulb-fill text-warning"></i> Show / Hide Explanation
+                        </button>
+
+                        <!-- Hidden Collapsible Explanation Box -->
+                        <div class="collapse" id="@collapseId">
+                            <div class="p-3 bg-light border-start border-4 border-warning rounded-3 mt-3 shadow-inner">
+                                <small class="fw-bold text-uppercase text-muted d-block mb-1 tracking-wider">
+                                    <i class="bi bi-info-circle-fill me-1 text-primary"></i> Explanation:
+                                </small>
+                                <p class="small text-dark mb-0 lh-base">@q.Explanation</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        }
-    </div>
+        </div>
+    }
 </div>
+
+@section Scripts {
+    <script>
+        function filterItems(type) {
+            const cards = document.querySelectorAll('.question-card');
+            document.querySelectorAll('.btn-pill').forEach(btn => btn.classList.remove('active', 'bg-primary', 'text-white'));
+
+            cards.forEach(card => {
+                const cardType = card.getAttribute('data-type');
+
+                if (type === 'all') {
+                    card.style.display = 'block';
+                    document.getElementById('btn-all').classList.add('active');
+                } else if (type === 'odd' && cardType === 'odd') {
+                    card.style.display = 'block';
+                    document.getElementById('btn-odd').classList.add('active');
+                } else if (type === 'even' && cardType === 'even') {
+                    card.style.display = 'block';
+                    document.getElementById('btn-even').classList.add('active');
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        function searchQuestions() {
+            let input = document.getElementById('searchInput').value.toLowerCase();
+            let cards = document.querySelectorAll('.question-card');
+
+            cards.forEach(card => {
+                let text = card.innerText.toLowerCase();
+                if (text.includes(input)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+}

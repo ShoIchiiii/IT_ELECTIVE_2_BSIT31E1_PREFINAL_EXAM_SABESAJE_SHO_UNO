@@ -1,31 +1,46 @@
-html {
-  font-size: 14px;
+/* Hero Header styling */
+.hero-card {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    box-shadow: 0 10px 30px rgba(30, 60, 114, 0.2) !important;
 }
 
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+.glass-card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+.bg-gradient-success {
+    background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
 }
 
-html {
-  position: relative;
-  min-height: 100%;
+.hover-up {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-body {
-  margin-bottom: 60px;
+    .hover-up:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.08) !important;
+    }
+
+/* Custom Filter Pill Buttons */
+.btn-pill {
+    border-radius: 50rem;
+    color: #6c757d;
+    border: none;
+    transition: all 0.2s;
 }
 
-.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
-  color: var(--bs-secondary-color);
-  text-align: end;
+    .btn-pill.active {
+        background-color: #0d6efd !important;
+        color: #fff !important;
+        box-shadow: 0 4px 10px rgba(13, 110, 253, 0.3);
+    }
+
+.hover-btn:hover {
+    background-color: #e7f1ff !important;
 }
 
-.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
-  text-align: start;
+.tracking-wider {
+    letter-spacing: 0.05em;
 }
