@@ -1,8 +1,40 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@model List<IT_ELECTIVE_2_SECTION_PREFINAL_EXAM_Lastname_FirstName.Models.ExamQuestion>
+
+@{
+    ViewData["Title"] = "Prefinal Exam Answers";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container my-4">
+    <div class="p-4 mb-4 bg-primary text-white rounded-3 shadow">
+        <h1 class="display-5 fw-bold">IT ELECTIVE 2 - PREFINAL EXAMINATION</h1>
+        <p class="fs-4 mb-0">Student: [Your Name] | Section: [Your Section]</p>
+    </div>
+
+    <div class="row">
+        @foreach (var q in Model)
+        {
+            <div class="col-md-6 mb-4">
+                <div class="card h-100 shadow-sm border-0 rounded-3">
+                    <div class="card-header bg-dark text-white fw-bold">
+                        Question #@q.Id
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text fw-semibold">@q.QuestionText</p>
+                        <ul class="list-group list-group-flush mb-3">
+                            @foreach (var opt in q.Options)
+                            {
+                                bool isCorrect = opt.StartsWith(q.CorrectAnswer.Substring(0, 2));
+                                <li class="list-group-item @(isCorrect ? "list-group-item-success fw-bold" : "")">
+                                    @opt @(isCorrect ? "✔️" : "")
+                                </li>
+                            }
+                        </ul>
+                        <div class="alert alert-info mb-0">
+                            <strong>Explanation:</strong> @q.Explanation
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
 </div>
