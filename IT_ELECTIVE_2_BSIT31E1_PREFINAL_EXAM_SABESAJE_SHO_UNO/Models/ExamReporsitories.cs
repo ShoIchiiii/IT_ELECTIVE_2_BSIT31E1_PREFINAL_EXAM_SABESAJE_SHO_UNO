@@ -113,5 +113,12 @@ namespace IT_ELECTIVE_2_SECTION_PREFINAL_EXAM_Lastname_FirstName.Services
                     CorrectAnswer = "A. Client-side validation can be bypassed",
                     Explanation = "Client-side scripts can be disabled or altered by users, making server-side validation crucial for security."
                 },
+                new ExamQuestion {
+                    Id = 15,
+                    QuestionText = "A school requires every student to have a unique Student Number. Which rule best represents this requirement?",
+                    Options = new List<string>{ "A. Student Number should always be nullable", "B. Student Number should be unique", "C. Student Number should always be the same", "D. Student Number should contain only spaces" },
+                    CorrectAnswer = "B. Student Number should be unique",
+                    Explanation = "Uniqueness ensures no two records collide on critical identifiers."
+                },
 
 
