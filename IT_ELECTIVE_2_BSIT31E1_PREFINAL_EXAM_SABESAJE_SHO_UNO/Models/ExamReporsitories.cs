@@ -85,3 +85,11 @@ namespace IT_ELECTIVE_2_SECTION_PREFINAL_EXAM_Lastname_FirstName.Services
                     CorrectAnswer = "B. Load related Section data together with Students",
                     Explanation = ".Include() specifies related data to be included in query results (eager loading)."
                 },
+                new ExamQuestion {
+                    Id = 11,
+                    QuestionText = "Why might a ViewModel be used when displaying Student and Section information?",
+                    Options = new List<string>{ "A. To replace the database", "B. To combine or shape the data specifically needed by the view", "C. To automatically create database tables", "D. To prevent controllers from using LINQ" },
+                    CorrectAnswer = "B. To combine or shape the data specifically needed by the view",
+                    Explanation = "ViewModels custom-tailor data for view presentation without exposing raw domain models."
+                },
+
