@@ -2,7 +2,7 @@
 
 namespace IT_ELECTIVE_2_SECTION_PREFINAL_EXAM_Lastname_FirstName.Services
 {
-    public static class ExamRepositories
+    public static class ExamRepository
     {
         public static List<ExamQuestion> GetQuestions()
         {
