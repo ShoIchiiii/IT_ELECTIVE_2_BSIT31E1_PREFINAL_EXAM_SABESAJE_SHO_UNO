@@ -1,25 +1,14 @@
-using IT_ELECTIVE_2_BSIT31E1_PREFINAL_EXAM_SABESAJE_SHO_UNO.Models;
 using Microsoft.AspNetCore.Mvc;
-using System.Diagnostics;
+using IT_ELECTIVE_2_BSIT31E1_PREFINAL_EXAM_S.Models;
 
-namespace IT_ELECTIVE_2_BSIT31E1_PREFINAL_EXAM_SABESAJE_SHO_UNO.Controllers
+namespace IT_ELECTIVE_2_BSIT31E1_PREFINAL_EXAM_S.Controllers
 {
     public class HomeController : Controller
     {
         public IActionResult Index()
         {
-            return View();
-        }
-
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            var questions = ExamRepository.GetQuestions();
+            return View(questions);
         }
     }
 }
