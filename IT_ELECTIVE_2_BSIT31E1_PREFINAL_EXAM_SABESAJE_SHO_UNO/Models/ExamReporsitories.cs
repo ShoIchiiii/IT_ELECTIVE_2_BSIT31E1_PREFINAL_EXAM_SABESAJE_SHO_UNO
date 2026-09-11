@@ -106,5 +106,12 @@ namespace IT_ELECTIVE_2_SECTION_PREFINAL_EXAM_Lastname_FirstName.Services
                     CorrectAnswer = "B. Client-side validation",
                     Explanation = "Client-side validation runs via JavaScript/HTML attributes directly in the browser."
                 },
+                new ExamQuestion {
+                    Id = 14,
+                    QuestionText = "Why is server-side validation still necessary if client-side validation exists?",
+                    Options = new List<string>{ "A. Client-side validation can be bypassed", "B. Client-side validation automatically modifies the database", "C. Server-side validation only works with SQLite", "D. Client-side validation cannot display messages" },
+                    CorrectAnswer = "A. Client-side validation can be bypassed",
+                    Explanation = "Client-side scripts can be disabled or altered by users, making server-side validation crucial for security."
+                },
 
 
