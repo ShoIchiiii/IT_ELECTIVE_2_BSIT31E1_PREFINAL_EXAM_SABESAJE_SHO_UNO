@@ -141,5 +141,12 @@ namespace IT_ELECTIVE_2_SECTION_PREFINAL_EXAM_Lastname_FirstName.Services
                     CorrectAnswer = "B. UseExceptionHandler()",
                     Explanation = "UseExceptionHandler middleware catches unhandled exceptions globally."
                 },
+                new ExamQuestion {
+                    Id = 19,
+                    QuestionText = "A user requests /Student/999, but Student 999 does not exist. What would be the most appropriate response?",
+                    Options = new List<string>{ "A. Display the student's information anyway", "B. Display a Not Found (404) response/page", "C. Delete Student 999", "D. Create Student 999 automatically" },
+                    CorrectAnswer = "B. Display a Not Found (404) response/page",
+                    Explanation = "HTTP 404 indicates that the requested resource could not be found."
+                },
 
 
