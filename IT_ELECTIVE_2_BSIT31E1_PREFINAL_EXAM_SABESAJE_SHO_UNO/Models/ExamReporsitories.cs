@@ -64,3 +64,10 @@ namespace IT_ELECTIVE_2_SECTION_PREFINAL_EXAM_Lastname_FirstName.Services
                     CorrectAnswer = "B. One-to-Many",
                     Explanation = "One Section has multiple Students (1:N)."
                 },
+                new ExamQuestion {
+                    Id = 8,
+                    QuestionText = "In the example 'public int SectionId { get; set; }', what is SectionId?",
+                    Options = new List<string>{ "A. Primary key of Student", "B. Foreign key referencing Section", "C. Navigation property", "D. Database connection string" },
+                    CorrectAnswer = "B. Foreign key referencing Section",
+                    Explanation = "SectionId holds the foreign key value pointing to the primary key of the Section table."
+                },
